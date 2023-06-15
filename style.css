@@ -1,0 +1,139 @@
+body {
+  background-color: black;
+}
+
+#progress-bar {
+  height: 10px;
+  background-color: #ddd;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+#question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10%;
+  padding: 5px 10px 30px 10px;
+  background-color: #424242;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#question-container.angle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 50px 0;
+  border-color: transparent #424242 transparent transparent;
+}
+
+#question-container.top-left {
+  top: 0;
+  left: 0;
+}
+
+#question-container.top-right {
+  top: 0;
+  right: 0;
+}
+
+#question-container.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+#question-container.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+#question-text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0 5%;
+  margin-bottom: 10px;
+}
+
+.option {
+  padding: 20px;
+  margin-bottom: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: lightgray;
+  color: black;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+  .selected {
+    background-color: gray;
+    color: white;
+    border-radius: 15px;
+  }
+
+
+  .option:hover {
+    background-color: gray;
+    color: white;
+    border-radius: 20px;
+  }
+
+  @media only screen and (max-device-width: 1024px) {
+    /* Disabilita l'hover per gli elementi con la classe "option" */
+    .option:hover {
+      background-color: lightgray;
+      color: black;
+      border-radius: 10px;
+    }
+  }
+
+
+  .correct-answer{
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+    animation: highlight_correct 1s ease;
+  }
+  
+  @keyframes highlight_correct {
+    from {
+      background-color: lightgreen;
+    }
+    to {
+      background-color: green;
+    }
+  }
+  
+  .incorrect-answer {
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    animation: highlight_incorrect 10s ease;
+  }
+  
+  @keyframes highlight_incorrect {
+    from {
+      background-color: lightcoral;
+    }
+    to {
+      background-color: red;
+    }
+  }
+
+#result-container{
+  color: white;
+  font-size: 20px;
+}
+
+#retry-button {
+  margin-top: 10px;
+}
