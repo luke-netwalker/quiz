@@ -1,4 +1,4 @@
-let firstQuestion = 0; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
+let firstQuestion = 40; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
 let hmq = 40 //quante domande provo [40 è la simulazione d'esame]
 
 const all_questions = [
@@ -2875,7 +2875,7 @@ function showQuestion() {
   optionsContainer.innerHTML = "";
   resultContainer.innerHTML = "";
   retryButton.style.display = "none";
-  const rQuestion = shuffledQuestions[currentQuestionIndex];
+  const rQuestion = shuffledQuestions[currentQuestionIndex-firstQuestion];
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.textContent = rQuestion.question;
   
