@@ -1,4 +1,4 @@
-let firstQuestion = 0; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
+let firstQuestion = 120; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
 let hmq = 40 //quante domande provo [40 è la simulazione d'esame]
 
 const questions = [
@@ -2945,5 +2945,13 @@ function retryQuiz() {
   showQuestion();
 }
 
+function search() {
+    const query = document.getElementById("question-text");
+    var encodedQuery = encodeURIComponent(query.textContent) + " mi rispondi in italiano dettagliando in modo approfondito la risposta";
+    var baseUrl = "https://www.bing.com/search?q=";
+    var searchUrl = baseUrl + encodedQuery;
+    window.open(searchUrl, "_blank");
+}
+      
 showQuestion();
 document.getElementById("retry-button").addEventListener("click", retryQuiz);
