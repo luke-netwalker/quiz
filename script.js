@@ -1,8 +1,16 @@
-let firstQuestion = 40; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
+//paramentri per customizzare l'esame
+let firstQuestion = 160; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
 let hmq = 40 //quante domande provo [40 è la simulazione d'esame]
-let time_correct = 500 //valore espresso in millisecondi
-let time_incorrect = 5000 //valore espresso in millisecondi
+let time_correct = 1000 //valore espresso in millisecondi
+let time_incorrect = 10000 //valore espresso in millisecondi
+let x = "1" //"1" per prendere le domande da tutto il dump o "2" per prendere il range specifico
 
+//variabili di sistema --NON TOCCARE--
+let currentQuestionIndex = firstQuestion
+let correctAnswersCount = 0;
+let shuffledQuestions
+
+//json contenente tutte le domande
 const all_questions = [
     {
         "question": "Which ITIL guiding principle recommends using existing services, processes and tools when improving services?",
@@ -2848,6 +2856,8 @@ const all_questions = [
     }
 ];
 
+//funzione per eseguire alcuni check preliminari
+function check_pre_exam() {
 let lastQuestions = firstQuestion + hmq;
 const questions = all_questions.slice(firstQuestion, lastQuestions + 1);
 
@@ -2859,12 +2869,15 @@ if ((firstQuestion + hmq) > all_questions.length) {
     firstQuestion = all_questions.length - hmq
 }
 
-let currentQuestionIndex = firstQuestion
-let correctAnswersCount = 0;
+if (x="1") {
+    shuffledQuestions = shuffleArray(all_questions);
+}
+else {
+    shuffledQuestions = shuffleArray(questions);
+}
+}
 
-// Mescola l'array delle domande in modo casuale
-const shuffledQuestions = shuffleArray(questions); //per fare un esame totalmente random sostituire questa variabile con "all_questions"
-
+//funzione principale, serve a mostrare la domanda e le relative opzioni
 function showQuestion() {
   const questionContainer = document.getElementById("question-container");
   const questionText = document.getElementById("question-text");
@@ -2925,6 +2938,7 @@ function shuffleQuestionOptions(question) {
     return question;
 }
 
+// Funzione per verificare la risposta data dall'utente
 function checkAnswer(option, correctAnswer) {
   const resultContainer = document.getElementById("result-container");
   option.classList.add("incorrect-answer");
@@ -2940,11 +2954,9 @@ function checkAnswer(option, correctAnswer) {
     resultContainer.classList.add("correct");
     option.classList.remove("incorrect-answer");
     option.classList.add("correct-answer");
-    //resultContainer.textContent = "Risposta corretta!";
     correctAnswersCount++;
   } else {
     resultContainer.classList.add("incorrect");
-    //resultContainer.textContent = `Risposta errata! La risposta corretta era: ${correctAnswer}`;
     setTimeout(resetQuestion, time_incorrect);
     currentQuestionIndex++;
     return;
@@ -2954,6 +2966,7 @@ function checkAnswer(option, correctAnswer) {
   setTimeout(resetQuestion, time_correct);
 }
 
+// funzione per resettare i settaggi della sezione dedicata alle risposte
 function resetQuestion() {
   const resultContainer = document.getElementById("result-container");
   resultContainer.textContent = "";
@@ -2961,6 +2974,7 @@ function resetQuestion() {
   showQuestion();
 }
 
+// funzione per riprovare il quiz una volta finito l'esame
 function retryQuiz() {
   currentQuestionIndex = firstQuestion
   lastQuestions = firstQuestion + hmq;
@@ -2968,6 +2982,7 @@ function retryQuiz() {
   showQuestion();
 }
 
+//funzione per cercare la domanda su Bing chat
 function search() {
     const query = document.getElementById("question-text");
     var encodedQuery = encodeURIComponent(query.textContent) + " mi rispondi in italiano dettagliando in modo approfondito la risposta (tema ITIL v4)";
@@ -2975,6 +2990,7 @@ function search() {
     var searchUrl = baseUrl + encodedQuery;
     window.open(searchUrl, "_blank");
 }
-      
+
+check_pre_exam();
 showQuestion();
 document.getElementById("retry-button").addEventListener("click", retryQuiz);
