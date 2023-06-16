@@ -1,14 +1,47 @@
-//paramentri per customizzare l'esame
-let firstQuestion = 160; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
-let hmq = 40 //quante domande provo [40 è la simulazione d'esame]
-let time_correct = 1000 //valore espresso in millisecondi
-let time_incorrect = 10000 //valore espresso in millisecondi
-let x = "1" //"1" per prendere le domande da tutto il dump o "2" per prendere il range specifico
+// Ottenere i riferimenti agli elementi del DOM
+const select1 = document.getElementById("select1");
+const select2 = document.getElementById("select2");
+const firstQuestionInput = document.getElementById("firstQuestion");
+let shuffledQuestions;
+// Aggiungere un listener per il cambiamento dell'opzione selezionata
+select1.addEventListener("change", function() {
+  if (select1.checked) {
+    // Disabilitare il campo di input "firstQuestion" se select1 è selezionato
+    firstQuestionInput.disabled = true;
+  }
+});
 
-//variabili di sistema --NON TOCCARE--
-let currentQuestionIndex = firstQuestion
-let correctAnswersCount = 0;
-let shuffledQuestions
+select2.addEventListener("change", function() {
+  if (select2.checked) {
+    // Abilitare il campo di input "firstQuestion" se select2 è selezionato
+    firstQuestionInput.disabled = false;
+  }
+});
+
+// Ottenere il riferimento al pulsante "submit"
+const submitButton = document.getElementById("submit");
+
+// Aggiungere un listener per l'evento di click del pulsante "submit"
+submitButton.addEventListener("click", function() {
+  // Ottenere i valori dei campi di input
+  const firstQuestionValue = document.getElementById("firstQuestion").value;
+  const hmqValue = document.getElementById("hmq").value;
+  const timeCorrectValue = document.getElementById("time_correct").value;
+  const timeIncorrectValue = document.getElementById("time_incorrect").value;
+ 
+  window.currentQuestionIndex = firstQuestionValue;
+  window.correctAnswersCount = 0;
+  window.lastQuestions = parseInt(firstQuestionValue) + parseInt(hmqValue);
+  window.firstQuestionValue = firstQuestionValue;
+  window.hmqValue = hmqValue;
+  window.timeCorrectValue = timeCorrectValue;
+  window.timeIncorrectValue = timeIncorrectValue;
+  
+  check_pre_exam();
+  showQuestion();
+});
+
+
 
 //json contenente tutte le domande
 const all_questions = [
@@ -2858,18 +2891,17 @@ const all_questions = [
 
 //funzione per eseguire alcuni check preliminari
 function check_pre_exam() {
-let lastQuestions = firstQuestion + hmq;
-const questions = all_questions.slice(firstQuestion, lastQuestions + 1);
+const questions = all_questions.slice(firstQuestionValue, lastQuestions);
 
 
-if (hmq > all_questions.length) {
-    hmq = 280
+if (hmqValue > all_questions.length) {
+    hmqValue = 280
 }
-if ((firstQuestion + hmq) > all_questions.length) {
-    firstQuestion = all_questions.length - hmq
+if ((firstQuestionValue + hmqValue) > all_questions.length) {
+    firstQuestionValue = all_questions.length - hmqValue
 }
 
-if (x="1") {
+if (select1.checked) {
     shuffledQuestions = shuffleArray(all_questions);
 }
 else {
@@ -2879,6 +2911,7 @@ else {
 
 //funzione principale, serve a mostrare la domanda e le relative opzioni
 function showQuestion() {
+
   const questionContainer = document.getElementById("question-container");
   const questionText = document.getElementById("question-text");
   const optionsContainer = document.getElementById("options-container");
@@ -2890,7 +2923,22 @@ function showQuestion() {
   optionsContainer.innerHTML = "";
   resultContainer.innerHTML = "";
   retryButton.style.display = "none";
-  const rQuestion = shuffledQuestions[currentQuestionIndex-firstQuestion];
+
+  console.log(currentQuestionIndex, "---", lastQuestions)
+  if (currentQuestionIndex >= lastQuestions) {
+    questionContainer.style.display = "none";
+    if (((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100) > 65) {
+        resultContainer.innerHTML = `Hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${(correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100}%)`;
+    }
+    else {
+        resultContainer.innerHTML = `Non hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${(correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100}%) per superare l'esame serve il 65% di risposte corrette`;
+    }
+    retryButton.style.display = "block";
+    progressBar.style.width = "100%";
+    return;
+  }
+
+  const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.textContent = rQuestion.question;
   
@@ -2902,24 +2950,10 @@ function showQuestion() {
     optionsContainer.appendChild(option);
   }
 
-  if (currentQuestionIndex >= lastQuestions) {
-    questionContainer.style.display = "none";
-    if (((correctAnswersCount / (lastQuestions - firstQuestion)) * 100) > 65) {
-        resultContainer.innerHTML = `Hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestion)} (${(correctAnswersCount / (lastQuestions - firstQuestion)) * 100}%)`;
-    }
-    else {
-        resultContainer.innerHTML = `Non hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestion)} (${(correctAnswersCount / (lastQuestions - firstQuestion)) * 100}%) per superare l'esame serve il 65% di risposte corrette`;
-    }
-    retryButton.style.display = "block";
-    progressBar.style.width = "100%";
-    return;
-  }
+  //console.clear()
+  console.log("domanda:", currentQuestionIndex - firstQuestionValue + 1, "/", lastQuestions - firstQuestionValue)
 
-  console.clear()
-  console.log("id domanda:", currentQuestionIndex + 1)
-  console.log("domanda:", currentQuestionIndex - firstQuestion + 1, "/", lastQuestions - firstQuestion)
-
-  progressBar.style.width = `${((currentQuestionIndex - firstQuestion + 1) / (lastQuestions - firstQuestion)) * 100}%`;
+  progressBar.style.width = `${((currentQuestionIndex - firstQuestionValue + 1) / (lastQuestions - firstQuestionValue)) * 100}%`;
 }
 
 // Funzione per mescolare un array utilizzando l'algoritmo di Fisher-Yates
@@ -2957,13 +2991,15 @@ function checkAnswer(option, correctAnswer) {
     correctAnswersCount++;
   } else {
     resultContainer.classList.add("incorrect");
-    setTimeout(resetQuestion, time_incorrect);
+    setTimeout(resetQuestion, timeIncorrectValue);
     currentQuestionIndex++;
     return;
   }
 
   currentQuestionIndex++;
-  setTimeout(resetQuestion, time_correct);
+  setTimeout(resetQuestion, timeCorrectValue);
+
+
 }
 
 // funzione per resettare i settaggi della sezione dedicata alle risposte
@@ -2976,8 +3012,8 @@ function resetQuestion() {
 
 // funzione per riprovare il quiz una volta finito l'esame
 function retryQuiz() {
-  currentQuestionIndex = firstQuestion
-  lastQuestions = firstQuestion + hmq;
+  currentQuestionIndex = firstQuestionValue
+  lastQuestions = firstQuestionValue + hmqValue;
   correctAnswersCount = 0;
   showQuestion();
 }
@@ -2991,6 +3027,4 @@ function search() {
     window.open(searchUrl, "_blank");
 }
 
-check_pre_exam();
-showQuestion();
-document.getElementById("retry-button").addEventListener("click", retryQuiz);
+document.getElementById("retry-button").addEventListener("click", retryQuiz)
