@@ -1,5 +1,7 @@
 let firstQuestion = 40; //da quale domanda parto [0-280] [0-39 | 40-79 | 80-119 | 120-159 | 160-199 | 200-239 | 240-280]
 let hmq = 40 //quante domande provo [40 è la simulazione d'esame]
+let time_correct = 500 //valore espresso in millisecondi
+let time_incorrect = 5000 //valore espresso in millisecondi
 
 const all_questions = [
     {
@@ -2943,13 +2945,13 @@ function checkAnswer(option, correctAnswer) {
   } else {
     resultContainer.classList.add("incorrect");
     //resultContainer.textContent = `Risposta errata! La risposta corretta era: ${correctAnswer}`;
-    setTimeout(resetQuestion, 5000);
+    setTimeout(resetQuestion, time_incorrect);
     currentQuestionIndex++;
     return;
   }
 
   currentQuestionIndex++;
-  setTimeout(resetQuestion, 500);
+  setTimeout(resetQuestion, time_correct);
 }
 
 function resetQuestion() {
