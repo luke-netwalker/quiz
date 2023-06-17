@@ -8,6 +8,7 @@ select1.addEventListener("change", function() {
   if (select1.checked) {
     // Disabilitare il campo di input "firstQuestion" se select1 è selezionato
     firstQuestionInput.disabled = true;
+    firstQuestionInput.value = 0
   }
 });
 
@@ -37,6 +38,13 @@ submitButton.addEventListener("click", function() {
   window.timeCorrectValue = timeCorrectValue;
   window.timeIncorrectValue = timeIncorrectValue;
   
+    // Rendi visibile la progress bar
+    document.getElementById('progress-bar').style.display = 'block';
+    // Rendi visibile il question-container
+    document.getElementById('question-container').style.display = 'flex';
+    // Rendi invisibile il settings-container
+    document.getElementById('settings-container').style.display = 'none';
+
   check_pre_exam();
   showQuestion();
 });
@@ -2891,14 +2899,16 @@ const all_questions = [
 
 //funzione per eseguire alcuni check preliminari
 function check_pre_exam() {
+console.log(firstQuestionValue, lastQuestions, hmqValue, all_questions.length)
 const questions = all_questions.slice(firstQuestionValue, lastQuestions);
+console.log(questions)
 
-
-if (hmqValue > all_questions.length) {
+if (parseInt(hmqValue) > all_questions.length) {
     hmqValue = 280
 }
-if ((firstQuestionValue + hmqValue) > all_questions.length) {
-    firstQuestionValue = all_questions.length - hmqValue
+if ((parseInt(firstQuestionValue) + parseInt(hmqValue)) > all_questions.length) {
+    console.log("ciao")
+    firstQuestionValue = all_questions.length - parseInt(hmqValue)
 }
 
 if (select1.checked) {
@@ -2916,28 +2926,26 @@ function showQuestion() {
   const questionText = document.getElementById("question-text");
   const optionsContainer = document.getElementById("options-container");
   const resultContainer = document.getElementById("result-container");
-  const retryButton = document.getElementById("retry-button");
   const progressBar = document.getElementById("progress-bar");
 
   questionContainer.style.display = "block";
   optionsContainer.innerHTML = "";
   resultContainer.innerHTML = "";
-  retryButton.style.display = "none";
 
-  console.log(currentQuestionIndex, "---", lastQuestions)
   if (currentQuestionIndex >= lastQuestions) {
     questionContainer.style.display = "none";
+    document.getElementById('settings-container').style.display = 'flex';
+
     if (((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100) > 65) {
         resultContainer.innerHTML = `Hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${(correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100}%)`;
     }
     else {
         resultContainer.innerHTML = `Non hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${(correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100}%) per superare l'esame serve il 65% di risposte corrette`;
     }
-    retryButton.style.display = "block";
     progressBar.style.width = "100%";
     return;
   }
-
+  console.log(currentQuestionIndex, firstQuestionValue)
   const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.textContent = rQuestion.question;
@@ -2950,7 +2958,7 @@ function showQuestion() {
     optionsContainer.appendChild(option);
   }
 
-  //console.clear()
+  console.clear()
   console.log("domanda:", currentQuestionIndex - firstQuestionValue + 1, "/", lastQuestions - firstQuestionValue)
 
   progressBar.style.width = `${((currentQuestionIndex - firstQuestionValue + 1) / (lastQuestions - firstQuestionValue)) * 100}%`;
@@ -2974,7 +2982,6 @@ function shuffleQuestionOptions(question) {
 
 // Funzione per verificare la risposta data dall'utente
 function checkAnswer(option, correctAnswer) {
-  const resultContainer = document.getElementById("result-container");
   option.classList.add("incorrect-answer");
   const optionsContainer = document.getElementById("options-container");
   const c_option = optionsContainer.getElementsByClassName("option");
@@ -2985,29 +2992,19 @@ function checkAnswer(option, correctAnswer) {
   }
 
   if (option.textContent === correctAnswer) {
-    resultContainer.classList.add("correct");
     option.classList.remove("incorrect-answer");
     option.classList.add("correct-answer");
     correctAnswersCount++;
   } else {
-    resultContainer.classList.add("incorrect");
-    setTimeout(resetQuestion, timeIncorrectValue);
+    setTimeout(showQuestion, timeIncorrectValue);
     currentQuestionIndex++;
     return;
   }
 
   currentQuestionIndex++;
-  setTimeout(resetQuestion, timeCorrectValue);
+  setTimeout(showQuestion, timeCorrectValue);
 
 
-}
-
-// funzione per resettare i settaggi della sezione dedicata alle risposte
-function resetQuestion() {
-  const resultContainer = document.getElementById("result-container");
-  resultContainer.textContent = "";
-  resultContainer.classList.remove("correct", "incorrect");
-  showQuestion();
 }
 
 // funzione per riprovare il quiz una volta finito l'esame
@@ -3026,5 +3023,3 @@ function search() {
     var searchUrl = baseUrl + encodedQuery;
     window.open(searchUrl, "_blank");
 }
-
-document.getElementById("retry-button").addEventListener("click", retryQuiz)

@@ -2,6 +2,11 @@ body {
   background-color: black;
 }
 
+#progress-bar,
+#question-container {
+  display: none;
+}
+
 #progress-bar {
   height: 10px;
   background-color: #ddd;
@@ -11,7 +16,6 @@ body {
 }
 
 #question-container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
