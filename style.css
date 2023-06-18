@@ -70,8 +70,9 @@ body {
 }
 
 #question-text {
+  word-wrap: break-word;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -93,9 +94,7 @@ body {
 }
 
   .selected {
-    background-color: gray;
-    color: white;
-    border-radius: 15px;
+     border-radius: 15px;
   }
 
 

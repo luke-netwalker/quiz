@@ -2899,15 +2899,12 @@ const all_questions = [
 
 //funzione per eseguire alcuni check preliminari
 function check_pre_exam() {
-console.log(firstQuestionValue, lastQuestions, hmqValue, all_questions.length)
 const questions = all_questions.slice(firstQuestionValue, lastQuestions);
-console.log(questions)
 
 if (parseInt(hmqValue) > all_questions.length) {
     hmqValue = 280
 }
 if ((parseInt(firstQuestionValue) + parseInt(hmqValue)) > all_questions.length) {
-    console.log("ciao")
     firstQuestionValue = all_questions.length - parseInt(hmqValue)
 }
 
@@ -2945,10 +2942,9 @@ function showQuestion() {
     progressBar.style.width = "100%";
     return;
   }
-  console.log(currentQuestionIndex, firstQuestionValue)
   const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
-  questionText.textContent = rQuestion.question;
+  questionText.innerHTML = rQuestion.question;
   
   for (let i = 0; i < rQuestion.options.length ; i++) {
     const option = document.createElement("div");
