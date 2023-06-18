@@ -104,7 +104,7 @@ body {
     border-radius: 20px;
   }
 
-  @media only screen and (max-device-width: 1024px) {
+  @media only screen and (max-device-width: 720px) {
     /* Disabilita l'hover per gli elementi con la classe "option" */
     .option:hover {
       color: white;
