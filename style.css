@@ -108,8 +108,7 @@ body {
   @media only screen and (max-device-width: 1024px) {
     /* Disabilita l'hover per gli elementi con la classe "option" */
     .option:hover {
-      background-color: lightgray;
-      color: black;
+      color: white;
       border-radius: 10px;
     }
   }
@@ -119,7 +118,7 @@ body {
     background-color: green;
     color: white;
     border-radius: 20px;
-    animation: highlight_correct 1s ease;
+    animation: highlight_correct 2s ease forwards;
   }
   
   @keyframes highlight_correct {
@@ -135,7 +134,7 @@ body {
     background-color: red;
     color: white;
     border-radius: 20px;
-    animation: highlight_incorrect 10s ease;
+    animation: highlight_incorrect 2s ease forwards;
   }
   
   @keyframes highlight_incorrect {
