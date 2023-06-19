@@ -1,15 +1,15 @@
-// Ottenere i riferimenti agli elementi del DOM
 const select1 = document.getElementById("select1");
 const select2 = document.getElementById("select2");
 const firstQuestionInput = document.getElementById("firstQuestion");
 const submitButton = document.getElementById("submit");
 
-var exam = "itil.json"
+var exam = "itil.json" //valore di default
 var exams = document.getElementById('exams');
 let shuffledQuestions;
 var all_questions;
 var selectedOption;
 
+// Aggiungere un listener per il cambiamento dell'esame selezionata
 exams.addEventListener('change', function() {
     exam = exams.value;
 });
@@ -191,7 +191,7 @@ function retryQuiz() {
 //funzione per cercare la domanda su Bing chat
 function search() {
     const query = document.getElementById("question-text");
-    var encodedQuery = encodeURIComponent(query.textContent) + " mi rispondi in italiano dettagliando in modo approfondito la risposta (tema ITIL v4)";
+    var encodedQuery = encodeURIComponent(query.textContent) + " ; mi rispondi in italiano dettagliando in modo approfondito la risposta (contesto " + exam + ")";
     var baseUrl = "https://www.bing.com/search?q=";
     var searchUrl = baseUrl + encodedQuery;
     window.open(searchUrl, "_blank");
