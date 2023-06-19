@@ -49,8 +49,6 @@ submitButton.addEventListener("click", function() {
   showQuestion();
 });
 
-
-
 //json contenente tutte le domande
 const all_questions = [
     {

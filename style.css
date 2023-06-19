@@ -104,14 +104,15 @@ body {
     border-radius: 20px;
   }
 
-  @media only screen and (max-device-width: 720px) {
+
+  @media only screen and (max-device-width: 1080px) {
     /* Disabilita l'hover per gli elementi con la classe "option" */
     .option:hover {
-      color: white;
+      background-color: lightgrey;
+      color: black;
       border-radius: 10px;
     }
   }
-
 
   .correct-answer{
     background-color: green;
@@ -123,9 +124,11 @@ body {
   @keyframes highlight_correct {
     from {
       background-color: lightgreen;
+      color: white;
     }
     to {
       background-color: green;
+      color: white;
     }
   }
   
@@ -139,9 +142,11 @@ body {
   @keyframes highlight_incorrect {
     from {
       background-color: lightcoral;
+      color: white;
     }
     to {
       background-color: red;
+      color: white;
     }
   }
 
