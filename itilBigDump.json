@@ -45,7 +45,6 @@
             "Supplier management",
             "Service desk",
             "Problem management",
-            "",
             "Relationship management"
         ],
         "correctAnswer": "Service desk"
@@ -93,7 +92,6 @@
     {
         "question": "Which statement about outcomes is CORRECT?",
         "options": [
-            "",
             "An outcome can be enabled by more than one output",
             "Outcomes are how the service performs",
             "An output can be enabled by one or more outcomes",
@@ -182,13 +180,11 @@
         "correctAnswer": "Whenever the workaround is used"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>A change is defined as the addition, modification, or removal of anything that could have a direct or indirect effect on [?].",
         "options": [
-            "A change is defined as the addition, modification, or removal of anything that could have a direct or indirect effect on [?].",
             "assets",
             "values",
             "elements",
-            "",
             "services"
         ],
         "correctAnswer": "services"
@@ -214,9 +210,8 @@
         "correctAnswer": "A service"
     },
     {
-        "question": "Identify the missing words in the following sentence.",
+        "question": "Identify the missing words in the following sentence.<br>The management of information security incidents usually requires [?].",
         "options": [
-            "The management of information security incidents usually requires [?].",
             "Immediate escalation",
             "Specialist teams",
             "A separate process",
@@ -265,9 +260,8 @@
         "correctAnswer": "Requesting information about how to create a document"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>The purpose of the supplier management practice is to ensure that the organization's suppliers and their [?] are managed appropriately to support the seamless provision of quality products and services.",
         "options": [
-            "The purpose of the supplier management practice is to ensure that the organization's suppliers and their [?] are managed appropriately to support the seamless provision of quality products and services.",
             "costs",
             "users",
             "value",
@@ -330,7 +324,6 @@
         "options": [
             "By paying for the service",
             "By managing server hardware",
-            "",
             "By communicating constraints",
             "By managing staff availability"
         ],
@@ -421,7 +414,6 @@
         "options": [
             "A high-risk change that needs very thorough assessment",
             "A change that is typically implemented as a service request",
-            "",
             "A change that must be implemented as soon as possible",
             "A change that needs to be scheduled, assessed and authorized following a defined process"
         ],
@@ -528,10 +520,8 @@
         "correctAnswer": "Providing transparency and good relationships"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>The purpose of the service configuration management practice is to ensure that accurate and reliable information about the configuration of services, and the [?] that support them, is available when and where it is needed.",
         "options": [
-            "The purpose of the service configuration management practice is to ensure that accurate and reliable information about the configuration of services, and the [?] that support them, is available when and where it is",
-            "needed.",
             "suppliers",
             "assets",
             "customers",
@@ -600,9 +590,8 @@
         "correctAnswer": "Value streams and processes"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>A service is a means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific [?] and risks.",
         "options": [
-            "A service is a means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific [?] and risks.",
             "information",
             "utility",
             "warranty",
@@ -671,9 +660,8 @@
         "correctAnswer": "To protect the information needed by the organization to conduct its business"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>The use of [?] should support, not replace what is observed, when using the 'start where you are1 guiding principle.",
         "options": [
-            "The use of [?] should support, not replace what is observed, when using the 'start where you are1 guiding principle.",
             "plans",
             "measurement",
             "process",
@@ -939,9 +927,8 @@
         "correctAnswer": "An application is not available during the business hours"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>A known error is a problem that has been [?] and has not been resolved.",
         "options": [
-            "A known error is a problem that has been [?] and has not been resolved.",
             "closed",
             "logged",
             "analysed",
@@ -1110,9 +1097,8 @@
         "correctAnswer": "Processes and procedures"
     },
     {
-        "question": "Identify the missing words in the following sentence.",
+        "question": "Identify the missing words in the following sentence.<br>The purpose of the [?] is to ensure that the organization continually co-creates value with all stakeholders in line with the organization's objectives.",
         "options": [
-            "The purpose of the [?] is to ensure that the organization continually co-creates value with all stakeholders in line with the organization's objectives.",
             "'focus on value' guiding principle",
             "service value system",
             "'service request management' practice",
@@ -1421,9 +1407,8 @@
         "correctAnswer": "Reduces the likelihood and impact of incidents"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>The purpose of the 'information security management' practice is to [?] the organization's information.",
         "options": [
-            "The purpose of the 'information security management' practice is to [?] the organization's information.",
             "protect",
             "store",
             "audit",
@@ -2139,9 +2124,8 @@
         "correctAnswer": "Service requests and their fulfillment should be automated as much as possible"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>A user is [?] that uses services.",
         "options": [
-            "A user is [?] that uses services.",
             "an organization",
             "a role",
             "a team",
@@ -2480,9 +2464,8 @@
         "correctAnswer": "Changes to products and services"
     },
     {
-        "question": "Identify the missing word(s) in the following sentence.",
+        "question": "Identify the missing word(s) in the following sentence.<br>The service desk should be the entry point and single point of contact for the [?] with all of its users.",
         "options": [
-            "The service desk should be the entry point and single point of contact for the [?] with all of its users.",
             "Service consumer",
             "Service provider",
             "Customer",
@@ -2682,9 +2665,8 @@
         "correctAnswer": "Keep it simple and practical"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>The purpose of the 'supplier management' practice is to ensure that the organization's suppliers and their performances are [?] appropriately to support the seamless provision of quality products and services.",
         "options": [
-            "The purpose of the 'supplier management' practice is to ensure that the organization's suppliers and their performances are [?] appropriately to support the seamless provision of quality products and services.",
             "measured",
             "rewarded",
             "managed",
@@ -2693,9 +2675,8 @@
         "correctAnswer": "managed"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>The purpose of the service configuration management practice is to ensure that accurate and reliable information about the [?], and the CIs that support them, is available when and where it is needed.",
         "options": [
-            "The purpose of the service configuration management practice is to ensure that accurate and reliable information about the [?], and the CIs that support them, is available when and where it is needed.",
             "relationships with suppliers",
             "configuration of services",
             "skills of people",
@@ -2734,9 +2715,8 @@
         "correctAnswer": "Any component that needs to be managed in order to deliver an IT service"
     },
     {
-        "question": "Identify the missing words in the following sentence.",
+        "question": "Identify the missing words in the following sentence.<br>When an organization has decided to improve a service, it should start by considering [?].",
         "options": [
-            "When an organization has decided to improve a service, it should start by considering [?].",
             "existing information",
             "new methods",
             "additional measurements",
@@ -3115,9 +3095,8 @@
         "correctAnswer": "Think and work holistically"
     },
     {
-        "question": "Identify the missing words in the following sentence.",
+        "question": "Identify the missing words in the following sentence.<br>The 'incident management' practice should maintain [?] for logging and managing incidents.",
         "options": [
-            "The 'incident management' practice should maintain [?] for logging and managing incidents.",
             "a dedicated team",
             "a formal process",
             "detailed procedures",
@@ -3256,9 +3235,8 @@
         "correctAnswer": "Warranty"
     },
     {
-        "question": "Identify the missing word in the following sentences.",
+        "question": "Identify the missing word in the following sentences.<br>A service is a means of enabling value co-creation by facilitating [?] that customers want to achieve, without the customer having to manage specific costs and risks.",
         "options": [
-            "A service is a means of enabling value co-creation by facilitating [?] that customers want to achieve, without the customer having to manage specific costs and risks.",
             "utility",
             "warranty",
             "outcomes",
@@ -3617,9 +3595,8 @@
         "correctAnswer": "To continually improve all products and services across all value chain activities"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>A [?] is the addition, modification, or removal of anything that could have a direct or indirect effect on services",
         "options": [
-            "A [?] is the addition, modification, or removal of anything that could have a direct or indirect effect on services",
             "problem",
             "risk",
             "change",
@@ -4250,15 +4227,14 @@
         "correctAnswer": "Service desk"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>A customer define is the [?] for a service and takes responsibility for the outcomes of service consumption.",
         "options": [
-            "A customer define is the [?] for a service and takes responsibility for the outcomes of service consumption.",
             "Requirements",
             "Resources",
             "Suppliers",
             "products"
         ],
-        "correctAnswer": "A customer define is the [?] for a service and takes responsibility for the outcomes of service consumption."
+        "correctAnswer": "Requirements"
     },
     {
         "question": "Which of the following is included in the purpose of the 'continual improvement' printer?",
@@ -4533,9 +4509,8 @@
         "correctAnswer": "Knowledgeable support staff"
     },
     {
-        "question": "Identify the Missing word(s) in the following sentence",
+        "question": "Identify the Missing word(s) in the following sentence<br>A(n) [?] cause, or potential cause, of one or more incidents?",
         "options": [
-            "A(n) [?] cause, or potential cause, of one or more incidents?",
             "Change",
             "Event",
             "Known error",
@@ -4796,9 +4771,8 @@
         "correctAnswer": "Service request management"
     },
     {
-        "question": "Identify the missing word in the following sentence.",
+        "question": "Identify the missing word in the following sentence.<br>Sponsor is the role that authorizes budget for service [?]",
         "options": [
-            "Sponsor is the role that authorizes budget for service [?)",
             "value",
             "consumption",
             "management",
