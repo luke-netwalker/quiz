@@ -380,16 +380,12 @@
         "correctAnswer": "Incident analysis skills"
     },
     {
-        "question": "Which two statements about an organization's culture are CORRECT?",
+        "question": "Which two statements about an organization's culture are CORRECT?<br><br>1. It is created from shared values based on how it carries out its work<br>2. It is determined by the type of technology used to support services<br>3. It should be based on the culture of prospective suppliers<br>4. It should be based on the objectives of the organization",
         "options": [
-            "1. It is created from shared values based on how it carries out its work",
-            "2. It is determined by the type of technology used to support services",
-            "3. It should be based on the culture of prospective suppliers",
-            "4. It should be based on the objectives of the organization",
-            "1 and 2",
-            "2 and 3",
-            "3 and 4",
-            "1 and 4"
+        "1 and 2",
+        "2 and 3",
+        "3 and 4",
+        "1 and 4"
         ],
         "correctAnswer": "1 and 4"
     },
@@ -584,16 +580,12 @@
         "correctAnswer": "Keep it simple and practical"
     },
     {
-        "question": "Which two statements about the 'service request management' practice are CORRECT?",
+        "question": "Which two statements about the 'service request management' practice are CORRECT?<br>1. Service requests are part of normal service delivery<br>2. Complaints can be handled as service requests<br>3. Service requests result from a failure in service<br>4. Normal changes should be handled as service requests",
         "options": [
-            "1. Service requests are part of normal service delivery",
-            "2. Complaints can be handled as service requests",
-            "3. Service requests result from a failure in service",
-            "4. Normal changes should be handled as service requests",
-            "1 and 2",
-            "2 and 3",
-            "3 and 4",
-            "1 and 4"
+        "1 and 2",
+        "2 and 3",
+        "3 and 4",
+        "1 and 4"
         ],
         "correctAnswer": "1 and 2"
     },
@@ -638,16 +630,12 @@
         "correctAnswer": "Trend analysis shows a large number of similar incidents"
     },
     {
-        "question": "In which two situations should the ITIL guiding principles be considered?",
+        "question": "In which two situations should the ITIL guiding principles be considered?<br><br>1. In every initiative<br>2. In relationships with all stakeholders<br>3. Only in specific initiatives where the principle is relevant<br>4. Only in specific stakeholder relationships where the principle is relevant",
         "options": [
-            "1. In every initiative",
-            "2. In relationships with all stakeholders",
-            "3. Only in specific initiatives where the principle is relevant",
-            "4. Only in specific stakeholder relationships where the principle is relevant",
-            "1 and 2",
-            "2 and 3",
-            "3 and 4",
-            "1 and 4"
+        "1 and 2",
+        "2 and 3",
+        "3 and 4",
+        "1 and 4"
         ],
         "correctAnswer": "1 and 2"
     },
@@ -1126,16 +1114,12 @@
         "correctAnswer": "Configuration management system (CMS)"
     },
     {
-        "question": "Which are phases of the release and deployment process?",
+        "question": "Which are phases of the release and deployment process?<br>1. Release build and test<br>2. Review and close<br>3. Categorize and record<br>4. Change authorization and schedule",
         "options": [
-            "1. Release build and test",
-            "2. Review and close",
-            "3. Categorize and record",
-            "4. Change authorization and schedule",
-            "1 and 2",
-            "1 and 3",
-            "2 and 4",
-            "3 and 4"
+        "1 and 2",
+        "1 and 3",
+        "2 and 4",
+        "3 and 4"
         ],
         "correctAnswer": "1 and 2"
     },
@@ -1950,16 +1934,12 @@
         "correctAnswer": "A means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific costs and risks"
     },
     {
-        "question": "Which TWO are important aspects of the 'service request management' practice?",
+        "question": "Which TWO are important aspects of the 'service request management' practice?<br>1. Standardization and automation<br>2. Providing a variety of channels for access<br>3. Establishing a shared view of targets<br>4. Policies for approvals",
         "options": [
-            "1. Standardization and automation",
-            "2. Providing a variety of channels for access",
-            "3. Establishing a shared view of targets",
-            "4. Policies for approvals",
-            "1 and 2",
-            "2 and 3",
-            "3 and 4",
-            "1 and 4"
+        "1 and 2",
+        "2 and 3",
+        "3 and 4",
+        "1 and 4"
         ],
         "correctAnswer": "1 and 4"
     },
@@ -2504,16 +2484,12 @@
         "correctAnswer": "To move new or changed components to live environments"
     },
     {
-        "question": "Which two statements about the guiding principles are CORRECT?",
+        "question": "Which two statements about the guiding principles are CORRECT?<br>1. The guiding principles support continual improvement<br>2. Each guiding principle applies to a selection of the available stakeholder groups<br>3. Organizations should decide which one of the guiding principles is relevant to them<br>4. Organizations should consider how the guiding principles interact with each other",
         "options": [
-            "1. The guiding principles support continual improvement",
-            "2. Each guiding principle applies to a selection of the available stakeholder groups",
-            "3. Organizations should decide which one of the guiding principles is relevant to them",
-            "4. Organizations should consider how the guiding principles interact with each other",
-            "1 and 2",
-            "2 and 3",
-            "3 and 4",
-            "1 and 4"
+        "1 and 2",
+        "2 and 3",
+        "3 and 4",
+        "1 and 4"
         ],
         "correctAnswer": "1 and 4"
     },
@@ -2568,16 +2544,12 @@
         "correctAnswer": "The change does not require additional authorization"
     },
     {
-        "question": "Which two are considered part of the 'organizations and people' dimension of service management?",
+        "question": "Which two are considered part of the 'organizations and people' dimension of service management?<br>1. Systems of authority<br>2. Culture<br>3. Relationships between organizations<br>4. Workflows",
         "options": [
-            "1. Systems of authority",
-            "2. Culture",
-            "3. Relationships between organizations",
-            "4. Workflows",
-            "1 and 2",
-            "2 and 3",
-            "3 and 4",
-            "1 and 4"
+        "1 and 2",
+        "2 and 3",
+        "3 and 4",
+        "1 and 4"
         ],
         "correctAnswer": "1 and 2"
     },
