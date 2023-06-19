@@ -3,8 +3,9 @@ const select2 = document.getElementById("select2");
 const firstQuestionInput = document.getElementById("firstQuestion");
 const submitButton = document.getElementById("submit");
 
-var exam = "itil.json" //valore di default
 var exams = document.getElementById('exams');
+var exam = exams.firstElementChild.value;
+var title = exams.firstElementChild.textContent;
 let shuffledQuestions;
 var all_questions;
 var selectedOption;
@@ -191,7 +192,8 @@ function retryQuiz() {
 //funzione per cercare la domanda su Bing chat
 function search() {
     const query = document.getElementById("question-text");
-    var encodedQuery = encodeURIComponent(query.textContent) + " ; mi rispondi in italiano dettagliando in modo approfondito la risposta (contesto " + exam + ")";
+    const answers = document.getElementById("options-container");
+    var encodedQuery = encodeURIComponent(query.textContent) + " ; quali tra queste è la risposta corretta: [" + answers.getElementsByClassName("option")[0].textContent + " ; " + answers.getElementsByClassName("option")[1].textContent + " ; " + answers.getElementsByClassName("option")[2].textContent + " ; " + answers.getElementsByClassName("option")[3].textContent + " ] (contesto " + title + " ; rispondi in italiano)";
     var baseUrl = "https://www.bing.com/search?q=";
     var searchUrl = baseUrl + encodedQuery;
     window.open(searchUrl, "_blank");
