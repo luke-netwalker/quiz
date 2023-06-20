@@ -4478,9 +4478,8 @@
         "correctAnswer": "Each value chain activity receives inputs and provides outputs"
     },
     {
-        "question": "Identity the missing word in the following sentence The purpose of the service configuration management practice is to ensure that accurate and reliable information about the configuration of [?], and the CIs that",
+        "question": "Identity the missing word in the following sentence The purpose of the service configuration management practice is to ensure that accurate and reliable information about the configuration of [?], and the CIs that support them, is available when and where it is needed",
         "options": [
-            "support them, is available when and where it is needed",
             "organizations",
             "outcomes",
             "relationships",

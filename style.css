@@ -40,6 +40,21 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+#submit {
+  background-color: #4CAF50; /* Verde accattivante */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+  background-color: #2e6d21; /* Verde più scuro */
+}
+
 #question-container.angle {
   position: absolute;
   width: 0;
@@ -148,16 +163,25 @@ body {
     }
   }
 
+#search-button{
+  margin-top: 25px;
+  margin-left: 20px;
+}  
+
 #result-container {
-  word-wrap: break-word;
   text-align: center;
+  display: none;
+}
+
+#result {
+  word-wrap: break-word;
   margin: 5px;
   color: white;
   font-size: 30px;
 }
 
 #retry-button {
-  margin-top: 10px;
+  margin: 10px;
 }
 
 #choice {

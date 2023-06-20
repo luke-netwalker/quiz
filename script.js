@@ -9,6 +9,7 @@ var title = exams.firstElementChild.textContent;
 let shuffledQuestions;
 var all_questions;
 var selectedOption;
+var incorrectQuestion = [];
 
 // Aggiungere un listener per il cambiamento dell'esame selezionata
 exams.addEventListener('change', function() {
@@ -50,8 +51,8 @@ submitButton.addEventListener("click", function() {
         
         const firstQuestionValue = document.getElementById("firstQuestion").value;
         const hmqValue = document.getElementById("hmq").value;
-        const timeCorrectValue = document.getElementById("time_correct").value;
-        const timeIncorrectValue = document.getElementById("time_incorrect").value;
+        const timeCorrectValue = document.getElementById("time_correct").value * 1000;
+        const timeIncorrectValue = document.getElementById("time_incorrect").value * 1000;
        
         window.currentQuestionIndex = firstQuestionValue;
         window.correctAnswersCount = 0;
@@ -68,6 +69,8 @@ submitButton.addEventListener("click", function() {
           document.getElementById('question-container').style.display = 'flex';
           // Rendi invisibile il settings-container
           document.getElementById('settings-container').style.display = 'none';
+
+          
       
         check_pre_exam();
         showQuestion();   
@@ -96,11 +99,10 @@ else {
 
 //funzione principale, serve a mostrare la domanda e le relative opzioni
 function showQuestion() {
-
   const questionContainer = document.getElementById("question-container");
   const questionText = document.getElementById("question-text");
   const optionsContainer = document.getElementById("options-container");
-  const resultContainer = document.getElementById("result-container");
+  const resultContainer = document.getElementById("result");
   const progressBar = document.getElementById("progress-bar");
 
   questionContainer.style.display = "block";
@@ -109,6 +111,7 @@ function showQuestion() {
 
   if (currentQuestionIndex >= lastQuestions) {
     questionContainer.style.display = "none";
+    document.getElementById('result-container').style.display = 'block';
     document.getElementById('settings-container').style.display = 'flex';
 
     if (((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100) > 65) {
@@ -120,7 +123,9 @@ function showQuestion() {
     progressBar.style.width = "100%";
     return;
   }
+
   const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
+  
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.innerHTML = rQuestion.question;
   
@@ -128,7 +133,7 @@ function showQuestion() {
     const option = document.createElement("div");
     option.className = "option";
     option.textContent = shuffledQuestion.options[i];
-    option.addEventListener("click", () =>checkAnswer(option, rQuestion.correctAnswer));
+    option.addEventListener("click", () =>checkAnswer(option, rQuestion.correctAnswer, rQuestion));
     optionsContainer.appendChild(option);
   }
 
@@ -155,7 +160,7 @@ function shuffleQuestionOptions(question) {
 }
 
 // Funzione per verificare la risposta data dall'utente
-function checkAnswer(option, correctAnswer) {
+function checkAnswer(option, correctAnswer, rQuestion) {
   option.classList.add("incorrect-answer");
   const optionsContainer = document.getElementById("options-container");
   const c_option = optionsContainer.getElementsByClassName("option");
@@ -171,6 +176,7 @@ function checkAnswer(option, correctAnswer) {
     correctAnswersCount++;
   } else {
     setTimeout(showQuestion, timeIncorrectValue);
+    incorrectQuestion.push(rQuestion);
     currentQuestionIndex++;
     return;
   }
@@ -182,10 +188,14 @@ function checkAnswer(option, correctAnswer) {
 }
 
 // funzione per riprovare il quiz una volta finito l'esame
-function retryQuiz() {
-  currentQuestionIndex = firstQuestionValue
-  lastQuestions = firstQuestionValue + hmqValue;
+function retryIncorrectQuestion() {
+  document.getElementById('settings-container').style.display = 'none';
+  document.getElementById('result-container').style.display = 'none';
+  shuffledQuestions = shuffleArray(incorrectQuestion);
+  currentQuestionIndex = 0;
+  lastQuestions = incorrectQuestion.length;
   correctAnswersCount = 0;
+  incorrectQuestion = [];
   showQuestion();
 }
 
