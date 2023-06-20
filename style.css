@@ -97,13 +97,11 @@ body {
      border-radius: 15px;
   }
 
-
   .option:hover {
     background-color: gray;
     color: white;
     border-radius: 20px;
   }
-
 
   @media only screen and (max-device-width: 1080px) {
     /* Disabilita l'hover per gli elementi con la classe "option" */
