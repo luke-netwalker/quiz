@@ -4320,9 +4320,8 @@
         "correctAnswer": "Output"
     },
     {
-        "question": "Identity the missing word(s) in the blowing sentence.",
+        "question": "Identity the missing word(s) in the blowing sentence.<br>The purpose of the problem management practice is to reduce the likelihood and impact o' incidents by identifying actual and potential causes of incidents, and managing workarounds and [?].",
         "options": [
-            "The purpose of the problem management practice is to reduce the likelihood and impact o' incidents by identifying actual and potential causes of incidents, and managing workarounds and [?].",
             "events",
             "charges",
             "IT assets",
