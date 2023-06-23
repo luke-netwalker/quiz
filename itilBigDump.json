@@ -1607,7 +1607,7 @@
         "correctAnswer": "Continual service improvement"
     },
     {
-        "question": "Which of the following should IT service continuity strategy be based on?<br>Design of the service metrics<br>Business continuity strategy<br>Business impact analysis (BIA)<br>Risk assessment",
+        "question": "Which of the following should IT service continuity strategy be based on?<br>1. Design of the service metrics<br>2. Business continuity strategy<br>3. Business impact analysis (BIA)<br>4. Risk assessment",
         "options": [
             "1, 2 and 4 only",
             "1, 2 and 3 only",
