@@ -94,7 +94,8 @@ body {
   word-spacing: 4px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0 5%;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .option {
@@ -166,18 +167,18 @@ body {
 #search-button{
   margin-left: 20px;
   margin-top: 25px;
-  background-color: #258fff; /* tonalità blu */
+  background-color: #258fff;
   color: white;
-  padding: 10px 20px;
+  padding: 18px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 21px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 #search-button:hover {
-  background-color: #003bdd; /* tonalità celeste */
+  background-color: #003bdd;
 }
 
 #result-container {
