@@ -41,7 +41,7 @@ body {
 }
 
 #submit {
-  background-color: #4CAF50; /* Verde accattivante */
+  background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -52,7 +52,7 @@ body {
 }
 
 #submit:hover {
-  background-color: #2e6d21; /* Verde più scuro */
+  background-color: #2e6d21;
 }
 
 #question-container.angle {
@@ -182,7 +182,21 @@ body {
 
 #retry-button {
   margin: 10px;
-}
+  background-color: #fe4242;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+  
+#retry-button:hover {
+  background-color: #b50000;
+  }
+  
+
 
 #choice {
   width: 112px;

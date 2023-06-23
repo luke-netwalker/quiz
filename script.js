@@ -112,6 +112,9 @@ function showQuestion() {
   if (currentQuestionIndex >= lastQuestions) {
     questionContainer.style.display = "none";
     document.getElementById('result-container').style.display = 'block';
+    if (incorrectQuestion.length === 0) {
+      document.getElementById('retry-button').style.display = 'none';
+    }
     document.getElementById('settings-container').style.display = 'flex';
 
     if (((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100) > 65) {
