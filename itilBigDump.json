@@ -1459,13 +1459,12 @@
     {
         "question": "Which statement about IT service management is CORRECT?",
         "options": [
-            "D18912E1457D5D1DDCBD40AB3BF70D5D",
             "It is performed by customers using a mix of IT systems, services and processes",
             "It is performed by IT service providers using a mix of suppliers and their products",
             "It is performed by the service desk using a mix of people, process and technology",
             "It is performed by IT service providers using a mix of people, process and technology"
         ],
-        "correctAnswer": "D18912E1457D5D1DDCBD40AB3BF70D5D"
+        "correctAnswer": "It is performed by IT service providers using a mix of people, process and technology"
     },
     {
         "question": "Which is the CORRECT of the 'R' role in a RACI matrix?",
@@ -1603,24 +1602,19 @@
             "Service operation",
             "Service transition",
             "Continual service improvement",
-            "D18912E1457D5D1DDCBD40AB3BF70D5D",
             "Service strategy"
         ],
         "correctAnswer": "Continual service improvement"
     },
     {
-        "question": "Which of the following should IT service continuity strategy be based on?",
+        "question": "Which of the following should IT service continuity strategy be based on?<br>Design of the service metrics<br>Business continuity strategy<br>Business impact analysis (BIA)<br>Risk assessment",
         "options": [
-            "Design of the service metrics",
-            "Business continuity strategy",
-            "Business impact analysis (BIA)",
-            "Risk assessment",
             "1, 2 and 4 only",
             "1, 2 and 3 only",
             "2, 3 and 4 only",
             "1, 3 and 4 only"
         ],
-        "correctAnswer": "Business impact analysis (BIA)"
+        "correctAnswer": "2, 3 and 4 only"
     },
     {
         "question": "What is NOT within the scope of service catalogue management?",
