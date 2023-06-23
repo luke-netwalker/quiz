@@ -164,9 +164,21 @@ body {
   }
 
 #search-button{
-  margin-top: 25px;
   margin-left: 20px;
-}  
+  margin-top: 25px;
+  background-color: #258fff; /* tonalità blu */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: #003bdd; /* tonalità celeste */
+}
 
 #result-container {
   text-align: center;
