@@ -2537,9 +2537,8 @@
         "correctAnswer": "Organizational silos"
     },
     {
-        "question": "An SLA is a service level agreement.",
+        "question": "An SLA is a service level agreement. Which describes the 'watermelon SLA' effect?",
         "options": [
-            "Which describes the 'watermelon SLA' effect?",
             "A single SLA defines target service levels for multiple customer, so every customer sees reports about other customers' experiences.",
             "The metrics in an SLA are focused on internal measures, so that reports show everything is good, while the customer is not satisfied.",
             "SLA targets change very frequently, so that each report includes new measures and trends cannot be analyzed.",
