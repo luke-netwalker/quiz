@@ -54,15 +54,37 @@ submitButton.addEventListener("click", function() {
         const timeCorrectValue = document.getElementById("time_correct").value * 1000;
         const timeIncorrectValue = document.getElementById("time_incorrect").value * 1000;
        
-        window.currentQuestionIndex = firstQuestionValue;
         window.correctAnswersCount = 0;
         window.lastQuestions = parseInt(firstQuestionValue) + parseInt(hmqValue);
-        window.firstQuestionValue = firstQuestionValue;
+
+        if (lastQuestions>all_questions.length) {
+          window.lastQuestions = all_questions.length
+        }
+
+        if (parseInt(hmqValue) > all_questions.length) {
+          hmqValue = all_questions.length
+        }
+
+        if ((parseInt(firstQuestionValue) + parseInt(hmqValue)) > all_questions.length) {
+          window.firstQuestionValue = all_questions.length - parseInt(hmqValue)
+          console.log("i valori inseriti vanno fuori scala, i nuovi valori sono:")
+          console.log("prima domanda (indice)", window.firstQuestionValue)
+          console.log("numero domande", parseInt(hmqValue))
+          console.log("ultima domanda (indice)", window.lastQuestions-1)
+        }
+        else {
+          window.firstQuestionValue = parseInt(firstQuestionValue)
+          console.log("i valori inseriti sono:")
+          console.log("prima domanda (indice)", window.firstQuestionValue)
+          console.log("numero domande", parseInt(hmqValue))
+          console.log("ultima domanda (indice)", window.lastQuestions-1)
+        }
+
+        window.currentQuestionIndex = window.firstQuestionValue;
         window.hmqValue = hmqValue;
         window.timeCorrectValue = timeCorrectValue;
         window.timeIncorrectValue = timeIncorrectValue;
        
-        
           // Rendi visibile la progress bar
           document.getElementById('progress-bar').style.display = 'block';
           // Rendi visibile il question-container
@@ -70,8 +92,6 @@ submitButton.addEventListener("click", function() {
           // Rendi invisibile il settings-container
           document.getElementById('settings-container').style.display = 'none';
 
-          
-      
         check_pre_exam();
         showQuestion();   
     });
@@ -80,14 +100,7 @@ submitButton.addEventListener("click", function() {
 
 //funzione per eseguire alcuni check preliminari
 function check_pre_exam() {
-const questions = all_questions.slice(firstQuestionValue, lastQuestions);
-
-if (parseInt(hmqValue) > all_questions.length) {
-    hmqValue = 280
-}
-if ((parseInt(firstQuestionValue) + parseInt(hmqValue)) > all_questions.length) {
-    firstQuestionValue = all_questions.length - parseInt(hmqValue)
-}
+const questions = all_questions.slice(window.firstQuestionValue, window.lastQuestions);
 
 if (select1.checked) {
     shuffledQuestions = shuffleArray(all_questions);
