@@ -3977,9 +3977,8 @@
 		"correctAnswer": "1 and 4"
 	},
     {
-        "question": "What role would be MOST suitable for someone with tots of experience working in IT and business roles?",
+        "question": "What role would be MOST suitable for someone with tots of experience working in IT and business roles? They also have experience of managing relationships with various stakeholders, including suppliers and business managers.",
         "options": [
-            "They also have experience of managing relationships with various stakeholders, including suppliers and business managers.",
             "Service level manager",
             "Service desk agent",
             "Change authority",
@@ -4628,9 +4627,8 @@
         "correctAnswer": "Identifying the service customer who will receive value"
     },
     {
-        "question": "Identify the missing work in the following sentence.",
+        "question": "Identify the missing work in the following sentence.<br>An organization which is undertaking an improvement initiative should [?] the existing methods and services when building for the future.",
         "options": [
-            "An organization which is undertaking an improvement initiative should [?] the existing methods and services when building for the future.",
             "Consider",
             "Discard",
             "Re-use",
