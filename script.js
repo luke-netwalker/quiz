@@ -125,6 +125,7 @@ function showQuestion() {
   if (currentQuestionIndex >= lastQuestions) {
     questionContainer.style.display = "none";
     document.getElementById('result-container').style.display = 'block';
+    document.getElementById('retry-button').removeAttribute('style');
     if (incorrectQuestion.length === 0) {
       document.getElementById('retry-button').style.display = 'none';
     }
@@ -135,13 +136,12 @@ function showQuestion() {
     }
     else {
         resultContainer.innerHTML = `Non hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${(correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100}%)<br> per superare l'esame serve il 65% di risposte corrette`;
-    }
+      }
     progressBar.style.width = "100%";
     return;
   }
-
+  console.log(parseInt(currentQuestionIndex),parseInt(firstQuestionValue));
   const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
-  
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.innerHTML = rQuestion.question;
   
@@ -205,11 +205,13 @@ function checkAnswer(option, correctAnswer, rQuestion) {
 
 // funzione per riprovare il quiz una volta finito l'esame
 function retryIncorrectQuestion() {
+  console.clear();
   document.getElementById('settings-container').style.display = 'none';
   document.getElementById('result-container').style.display = 'none';
   shuffledQuestions = shuffleArray(incorrectQuestion);
   currentQuestionIndex = 0;
-  lastQuestions = incorrectQuestion.length;
+  firstQuestionValue = 0;
+  window.lastQuestions = incorrectQuestion.length;
   correctAnswersCount = 0;
   incorrectQuestion = [];
   showQuestion();
