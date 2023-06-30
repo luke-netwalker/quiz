@@ -112,6 +112,7 @@ else {
 
 //funzione principale, serve a mostrare la domanda e le relative opzioni
 function showQuestion() {
+  
   const questionContainer = document.getElementById("question-container");
   const questionText = document.getElementById("question-text");
   const optionsContainer = document.getElementById("options-container");
@@ -121,6 +122,8 @@ function showQuestion() {
   questionContainer.style.display = "block";
   optionsContainer.innerHTML = "";
   resultContainer.innerHTML = "";
+
+  optionsContainer.classList.remove("disable-interaction");
 
   if (currentQuestionIndex >= lastQuestions) {
     questionContainer.style.display = "none";
@@ -180,6 +183,7 @@ function checkAnswer(option, correctAnswer, rQuestion) {
   option.classList.add("incorrect-answer");
   const optionsContainer = document.getElementById("options-container");
   const c_option = optionsContainer.getElementsByClassName("option");
+  optionsContainer.classList.add("disable-interaction");
   for (let i = 0; i < c_option.length; i++) {
     if (c_option[i].textContent === correctAnswer) {
       c_option[i].classList.add("correct-answer");
