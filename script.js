@@ -21,7 +21,9 @@ select1.addEventListener("change", function() {
   if (select1.checked) {
     // Disabilitare il campo di input "firstQuestion" se select1 è selezionato
     firstQuestionInput.disabled = true;
-    firstQuestionInput.value = 0
+    firstQuestionInput.value = 0;
+    document.getElementById("hmq").value = 40;
+
   }
 });
 
@@ -29,6 +31,8 @@ select2.addEventListener("change", function() {
   if (select2.checked) {
     // Abilitare il campo di input "firstQuestion" se select2 è selezionato
     firstQuestionInput.disabled = false;
+    firstQuestionInput.value = 0;
+    document.getElementById("hmq").value = 10;
   }
 });
 
@@ -91,7 +95,8 @@ submitButton.addEventListener("click", function() {
           document.getElementById('question-container').style.display = 'flex';
           // Rendi invisibile il settings-container
           document.getElementById('settings-container').style.display = 'none';
-
+          // Rendi invisibile il retry-button
+          document.getElementById('retry-button').style.display = 'none';
         check_pre_exam();
         showQuestion();   
     });
@@ -129,7 +134,7 @@ function showQuestion() {
     questionContainer.style.display = "none";
     document.getElementById('result-container').style.display = 'block';
     document.getElementById('retry-button').removeAttribute('style');
-    if (incorrectQuestion.length === 0) {
+    if (correctAnswersCount === lastQuestions-firstQuestionValue) {
       document.getElementById('retry-button').style.display = 'none';
     }
     document.getElementById('settings-container').style.display = 'flex';
