@@ -10,7 +10,7 @@ i tempi invece fanno riferimento al deley dopo aver risposto in caso di risposta
 
 modfiche future:
 - ✅🪲 impedire click accidentali durante l'attesa della domanda successiva
-- 📈 assegnare al dump una numerazione progressiva
+- ✅📈 assegnare al dump una numerazione progressiva
 - 📈 assegnare ad ogni domanda un argomento
 - 📈 meccanismo di cookie per salvare tutte le domande sbagliate in modo da generare un report dettagliato dell'argomento che va approfondito
 - ✅🪲 in caso di rispote errate, avviando un nuovo esame rimane visibile il tasto per riprovare l'esame, va levato
