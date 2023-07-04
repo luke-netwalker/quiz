@@ -810,21 +810,14 @@
         "correctAnswer": "Understand how each element contributes to value creation"
     },
     {
-        "question": "Arrange the following steps of software lifecycle in correct order.",
+        "question": "Arrange the following steps of software lifecycle in correct order.<br>Retire<br>Test<br>Operate<br>Deploy<br>Ideation<br>Develop<br>Design",
         "options": [
-            "Retire",
-            "Test",
-            "Operate",
-            "Deploy",
-            "Ideation",
-            "Develop",
-            "Design",
             "Ideation, Design, Develop, Deploy, Test, Operate, Retire",
-            "I. Retire, Test, Operate, Deploy, Ideation, Develop, Design",
-            "J. None of the above",
-            "K. Ideation, Test, Develop, Deploy, Design, Operate, Retire"
+            "Retire, Test, Operate, Deploy, Ideation, Develop, Design",
+            "None of the above",
+            "Ideation, Test, Develop, Deploy, Design, Operate, Retire"
         ],
-        "correctAnswer": "Retire"
+        "correctAnswer": "Ideation, Design, Develop, Deploy, Test, Operate, Retire"
     },
     {
         "question": "Which practice provides a single point of contact for users?",
