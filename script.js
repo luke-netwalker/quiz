@@ -152,7 +152,7 @@ function showQuestion() {
   const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.innerHTML = rQuestion.question;
-  
+  console.log("domanda numero: " + rQuestion.id)
   for (let i = 0; i < rQuestion.options.length ; i++) {
     const option = document.createElement("div");
     option.className = "option";
