@@ -8,7 +8,8 @@
             "Focus on value"
         ],
         "correctAnswer": "Start where you are",
-        "id": 1
+        "id": 1,
+        "category": "guiding principle"
     },
     {
         "question": "Which practice has a purpose that includes ensuring that risks have been properly assessed?",
@@ -19,7 +20,8 @@
             "Change control"
         ],
         "correctAnswer": "Change control",
-        "id": 2
+        "id": 2,
+        "category":"chenge"
     },
     {
         "question": "When should a full risk assessment and authorization be carried out for a standard change?",
@@ -5530,6 +5532,7 @@
             "Measureable Targets"
         ],
         "correctAnswer": "Assessment results",
-        "id": 503
+        "id": 503,
+        "category":"guiding principle"
     }
 ]

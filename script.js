@@ -148,11 +148,12 @@ function showQuestion() {
     progressBar.style.width = "100%";
     return;
   }
+  
   console.log(parseInt(currentQuestionIndex),parseInt(firstQuestionValue));
   const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.innerHTML = rQuestion.question;
-  console.log("domanda numero: " + rQuestion.id)
+  document.getElementById('id-question').textContent = "#"+rQuestion.id
   for (let i = 0; i < rQuestion.options.length ; i++) {
     const option = document.createElement("div");
     option.className = "option";
