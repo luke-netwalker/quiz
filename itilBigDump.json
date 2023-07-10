@@ -269,7 +269,7 @@
         "options": [
             "To help an organization make good decisions", 
             "To direct and control an organization", 
-            "To identify activities that an organization must perform in order to deliver a valuable service'",
+            "To identify activities that an organization must perform in order to deliver a valuable service",
             "To ensure that an organization's performance continually meets stakeholders' expectations"
         ],
         "correctAnswer": "To help an organization make good decisions",
@@ -618,7 +618,7 @@
         "question": "Which is a purpose of the 'engage' value chain activity?",
         "options": [
             "Meeting expectations for quality, costs and time-to-market", 
-            "Ensuring the continual improvement of services'", 
+            "Ensuring the continual improvement of services", 
             "Ensuring that the organization's vision is understood",
             "Providing transparency and good relationships"],
 
@@ -727,7 +727,7 @@
         "options": [
             "Trend analysis shows a large number of similar incidents", 
             "A user requests delivery of a laptop", 
-            "A monitoring tool detects a change of state for a service'", 
+            "A monitoring tool detects a change of state for a service", 
             "'Continual improvement' needs to prioritize an improvement opportunity"
         ],
 
@@ -764,7 +764,7 @@
         "options": [
             "To support the agreed quality of a service handling all agreed, userinitiated service requests", 
             "To set clear business-based targets for service performance", 
-            "To establish and nurture the links between the organization and its stakeholders'", 
+            "To establish and nurture the links between the organization and its stakeholders", 
             "To align the organization's practices and services with changing business needs"
         ],
 
@@ -944,7 +944,7 @@
         "question": "Which describes outcomes?",
         "options": [
             "Tangible or intangible deliverables", 
-            "Results desired by a stakeholder'",
+            "Results desired by a stakeholder",
             "Configuration of an organization's resources",
             "Functionality offered by a product or service"],
 
@@ -2493,7 +2493,7 @@
         "id": "208",
         "question": "Which is a purpose of the 'service level management' practice?",
         "options": [
-            "To establish and nurture the links between the organization and its stakeholders'",
+            "To establish and nurture the links between the organization and its stakeholders",
             "To ensure that the organization's suppliers and their performance are managed appropriately",
             "To set clear business-based targets for service levels", 
             "To support the agreed quality of a service handling all agreed, user-initiated service requests"],
@@ -2625,7 +2625,7 @@
         "id": "219",
         "question": "Which is included in the purpose of the 'deliver and support' value chain activity?",
         "options": [
-            "Meeting stakeholder expectations for time to market'",
+            "Meeting stakeholder expectations for time to market",
             "Understanding the organization's service vision",
             "Understanding stakeholder needs", 
             "Providing services to agreed specifications"],
