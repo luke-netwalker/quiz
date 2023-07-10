@@ -139,11 +139,11 @@ function showQuestion() {
     }
     document.getElementById('settings-container').style.display = 'flex';
 
-    if (((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100) > 65) {
-        resultContainer.innerHTML = `Hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${(correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100}%)`;
+    if (((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100) >= 65) {
+        resultContainer.innerHTML = `<span style="color: #4CAF50;">Hai superato l'esame!</span> Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${Math.round((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100).toFixed(0)}%)`;
     }
     else {
-        resultContainer.innerHTML = `Non hai superato l'esame! Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${(correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100}%)<br> per superare l'esame serve il 65% di risposte corrette`;
+        resultContainer.innerHTML = `<span style="color: red;">Non hai superato l'esame!</span> Risposte corrette: ${correctAnswersCount}/${(lastQuestions-firstQuestionValue)} (${Math.round((correctAnswersCount / (lastQuestions - firstQuestionValue)) * 100).toFixed(0)}%)<br> per superare l'esame serve il 65% di risposte corrette`;
       }
     progressBar.style.width = "100%";
     return;

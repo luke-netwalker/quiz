@@ -2025,7 +2025,7 @@
         "question": "Which statement about metrics is CORRECT?",
         "options": [
             "Process metrics can be used to measure end-to-end service performance", 
-            "Technology metrics can be used to measure component performance and availability'",
+            "Technology metrics can be used to measure component performance and availability",
             "Process metrics can be used to measure the utilization of a supplier's network",
             "Technology metrics can be used to determine the overall health of a process"
         ],
