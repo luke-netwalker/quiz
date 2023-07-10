@@ -152,6 +152,7 @@ function showQuestion() {
   const rQuestion = shuffledQuestions[parseInt(currentQuestionIndex)-parseInt(firstQuestionValue)];
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.innerHTML = rQuestion.question;
+  document.getElementById('id-question').textContent = (currentQuestionIndex-firstQuestionValue+1)+ "/"+ (lastQuestions-firstQuestionValue)+ " | ID #"+ rQuestion.id
   
   for (let i = 0; i < rQuestion.options.length ; i++) {
     const option = document.createElement("div");
@@ -160,9 +161,6 @@ function showQuestion() {
     option.addEventListener("click", () =>checkAnswer(option, rQuestion.correctAnswer, rQuestion));
     optionsContainer.appendChild(option);
   }
-
-  //console.clear()
-  console.log("domanda:", currentQuestionIndex - firstQuestionValue + 1, "/", lastQuestions - firstQuestionValue)
 
   progressBar.style.width = `${((currentQuestionIndex - firstQuestionValue + 1) / (lastQuestions - firstQuestionValue)) * 100}%`;
 }
