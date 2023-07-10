@@ -14,6 +14,7 @@ var incorrectQuestion = [];
 // Aggiungere un listener per il cambiamento dell'esame selezionata
 exams.addEventListener('change', function() {
     exam = exams.value;
+    
 });
 
 // Aggiungere un listener per il cambiamento dell'opzione selezionata
@@ -153,7 +154,7 @@ function showQuestion() {
   const shuffledQuestion = shuffleQuestionOptions(rQuestion);
   questionText.innerHTML = rQuestion.question;
   document.getElementById('id-question').textContent = "#"+rQuestion.id
-  console.log(rQuestion.category)
+  console.log("categoria: ",rQuestion.category)
   for (let i = 0; i < rQuestion.options.length ; i++) {
     const option = document.createElement("div");
     option.className = "option";
